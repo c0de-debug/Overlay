@@ -17,6 +17,8 @@
             </div>
             <div class="top-actions">
                 <button id="btnDemo" class="btn primary" type="button">Demo</button>
+                <button id="btnSyncTest" class="btn" type="button" style="background: #8b5cf6; color: white;">Sync
+                    Test</button>
                 <button id="btnReset" class="btn danger" type="button">Reset</button>
             </div>
         </div>
@@ -101,10 +103,41 @@
                     <button type="button" class="btn" data-bump="p2Votes" data-amount="10">+10</button>
                 </div>
             </div>
+
+            <!-- TIMER -->
+            <div class="panel">
+                <h2>Timer</h2>
+
+                <div class="row">
+                    <div style="flex:1">
+                        <label>Min</label>
+                        <input id="inputTimerMin" type="number" min="0" value="0" />
+                    </div>
+                    <div style="flex:1">
+                        <label>Sec</label>
+                        <input id="inputTimerSec" type="number" min="0" max="59" value="0" />
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 10px; gap: 5px;">
+                    <button id="btnSetTimer" class="btn" style="flex:1">Set</button>
+                    <button id="btnStartTimer" class="btn primary" style="flex:1">Start</button>
+                </div>
+                <div class="row" style="margin-top: 5px; gap: 5px;">
+                    <button id="btnStopTimer" class="btn" style="flex:1">Stop</button>
+                    <button id="btnResetTimer" class="btn danger" style="flex:1">Reset</button>
+                </div>
+
+                <div id="timerDisplay"
+                    style="font-family: monospace; font-size: 32px; text-align: center; margin-top: 15px; font-weight: bold; background: #eee; padding: 10px; border-radius: 4px;">
+                    00:00
+                </div>
+            </div>
         </div>
 
         <div class="bottom-note">
-            Overlay → <span class="mono">http://localhost:5500/overlay.html</span>
+            Overlay → <a href="./overlay.html" class="mono">overlay.html</a> |
+            Timer → <a href="./timer.html" class="mono">timer.html</a>
         </div>
     </div>
 

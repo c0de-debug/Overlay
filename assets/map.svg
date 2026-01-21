@@ -1,7 +1,0 @@
-<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
-  <path d="M50,150 L80,140 L120,150 L150,180 L130,220 L100,230 L60,210 Z" fill="currentColor" /> <!-- Sumatra-ish -->
-  <path d="M180,250 L350,250 L380,270 L350,290 L200,290 Z" fill="currentColor" /> <!-- Java-ish -->
-  <path d="M220,100 L320,80 L380,120 L360,180 L250,200 L200,160 Z" fill="currentColor" /> <!-- Kalimantan-ish -->
-  <path d="M420,120 L480,100 L520,140 L500,220 L440,200 Z" fill="currentColor" /> <!-- Sulawesi-ish -->
-  <path d="M600,150 L750,150 L800,180 L780,230 L650,250 L600,220 Z" fill="currentColor" /> <!-- Papua-ish -->
-</svg>

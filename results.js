@@ -1,4 +1,5 @@
 const STORAGE_KEY = "osis_state";
+const syncChannel = new BroadcastChannel("osis_sync");
 
 function loadState() {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -79,11 +80,18 @@ function render() {
     }
 }
 
-// Initial render
-render();
-
+// Global Sync Listeners
 window.addEventListener("storage", (e) => {
     if (e.key === STORAGE_KEY) render();
 });
 
-setInterval(render, 1000);
+syncChannel.onmessage = (e) => {
+    if (e.data.type === "SYNC") render();
+};
+
+// Initial render
+render();
+setInterval(render, 500);
+
+// Origin Debugging
+console.log("Results loaded on:", window.location.origin);

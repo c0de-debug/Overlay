@@ -1,3 +1,6 @@
+const STORAGE_KEY = "osis_state";
+const syncChannel = new BroadcastChannel("osis_sync");
+
 const DEFAULTS = {
   titleText: "PEMILIHAN KETUA OSIS",
   schoolText: "SMK BUNDA MULIA • 2026",
@@ -12,7 +15,7 @@ const DEFAULTS = {
 };
 
 function loadState() {
-  const raw = localStorage.getItem("osis_state");
+  const raw = localStorage.getItem(STORAGE_KEY);
   if (!raw) return { ...DEFAULTS };
   try {
     return { ...DEFAULTS, ...JSON.parse(raw) };
@@ -37,13 +40,7 @@ function setText(id, text) {
 function render() {
   const s = loadState();
 
-  setText("titleText", s.titleText);
-  setText("schoolText", s.schoolText);
   setText("statusText", s.statusText);
-
-  // Background labels
-  document.querySelectorAll(".paslon-label.p1").forEach(el => el.textContent = s.p1No);
-  document.querySelectorAll(".paslon-label.p2").forEach(el => el.textContent = s.p2No);
 
   setText("p1Name", s.p1Name);
   setText("p2Name", s.p2Name);
@@ -73,10 +70,15 @@ function tickClock() {
 }
 
 window.addEventListener("storage", (e) => {
-  if (e.key === "osis_state") render();
+  if (e.key === STORAGE_KEY) render();
 });
+
+syncChannel.onmessage = (e) => {
+  if (e.data.type === "SYNC") render();
+};
 
 render();
 tickClock();
 setInterval(tickClock, 1000);
 setInterval(render, 300);
+console.log("Overlay loaded on:", window.location.origin);

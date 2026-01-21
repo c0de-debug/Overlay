@@ -17,6 +17,7 @@ The system uses `localStorage` to sync data between the Control Panel and the Ov
     - **Control Panel**: `http://localhost:5500/control.html`
     - **Overlay**: `http://localhost:5500/overlay.html`
     - **Results Page**: `http://localhost:5500/results.html`
+    - **Timer Page**: `http://localhost:5500/timer.html`
 
 ## 📺 OBS Integration
 
@@ -27,22 +28,28 @@ To use these as broadcast overlays:
 3. For the **URL**, enter the local server URL: `http://localhost:5500/overlay.html`.
 4. Set the **Width** to `1920` and **Height** to `1080`.
 5. Check the option: **"Shutdown source when not visible"** (optional).
-6. To update data, keep the **Control Panel** open in your browser. Any changes you make will instantly reflect in the OBS Browser Source.
+6. To update data, keep the **Control Panel** open in your browser (or see "Pro Tip" below). Any changes you make will instantly reflect in the OBS Browser Source.
 
-> [!IMPORTANT]
-> **Why use a local server?**
-> If you open the `.html` files directly from your file system (e.g., `file://C:/...`), some browsers restrict `localStorage` access between different files for security. Running through `http://localhost` ensures seamless real-time syncing.
+> [!TIP]
+> **Pro Tip: Syncing Control Panel in OBS**
+> If you find that changes in Chrome don't show up in OBS, it's because they use separate browser profiles. To fix this:
+> 1. In OBS, go to **View** > **Docks** > **Custom Browser Docks**.
+> 2. Name it "OSIS Control" and set the URL to `http://localhost:5500/control.html`.
+> 3. Click **Apply** and dock the panel anywhere in OBS.
+> 4. Now, the Control Panel and your Overlays will share the exact same storage and session!
 
 ## 🛠️ Features
 
 - **Real-time Sync**: Update votes, names, and titles instantly.
-- **Scrapbook Aesthetic**: Polaroid photos, tape textures, and hand-drawn star elements.
+- **Countdown Timer**: Dedicated timer page controlled by the panel for presentations or voting deadlines.
+- **Scrapbook Aesthetic**: Polaroid photos, tape textures, and hand-drawn star elements (now integrated into custom background assets).
 - **Dynamic Math**: Automatically calculates percentages and progress based on vote counts.
 - **Demo Mode**: Includes a "Demo" button in the Control Panel to quickly populate example data.
 
 ## 📂 Project Structure
 
-- `control.html/js/css`: The management interface.
+- `control.html/js/css`: The management interface with new timer controls.
 - `overlay.html/js/css`: The main broadcast overlay.
 - `results.html/js/css`: A dedicated results summary page.
-- `assets/`: Contains images like Polaroid frames, tape, stickers, and candidate photos.
+- `timer.html/js/css`: A full-screen timer/countdown page for presentations.
+- `assets/`: Contains images like locker-room backgrounds and candidate photos.
