@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control Panel - Pemilihan OSIS</title>
+    <link rel="stylesheet" href="./control.css" />
+</head>
+
+<body>
+    <div class="control-wrap">
+        <div class="top">
+            <div>
+                <h1>Control Panel</h1>
+                <p class="hint">Update otomatis tersimpan (localStorage). Overlay OBS akan ikut update.</p>
+            </div>
+            <div class="top-actions">
+                <button id="btnDemo" class="btn primary" type="button">Demo</button>
+                <button id="btnReset" class="btn danger" type="button">Reset</button>
+            </div>
+        </div>
+
+        <div class="grid">
+            <!-- HEADER / META -->
+            <div class="panel">
+                <h2>Header</h2>
+
+                <label>Judul</label>
+                <input id="titleText" placeholder="PEMILIHAN KETUA OSIS" />
+
+                <label>Sekolah</label>
+                <input id="schoolText" placeholder="SMK BUNDA MULIA • 2026" />
+
+                <label>Status</label>
+                <select id="statusText">
+                    <option value="PENCOBLOSAN">PENCOBLOSAN</option>
+                    <option value="LIVE">LIVE</option>
+                    <option value="REKAP">REKAP</option>
+                    <option value="SELESAI">SELESAI</option>
+                </select>
+            </div>
+
+            <!-- FOOTER / TPS -->
+            <div class="panel">
+                <h2>Rekap</h2>
+
+                <label>TPS</label>
+                <div class="stepper">
+                    <button type="button" class="step minus" data-target="tps">−</button>
+                    <input id="tps" type="number" min="0" step="1" value="0" />
+                    <button type="button" class="step plus" data-target="tps">+</button>
+                </div>
+
+                <label>Teks sumber (footer kiri)</label>
+                <input id="sourceText" placeholder="Sumber: Panitia OSIS SMK Bunda Mulia" />
+            </div>
+
+            <!-- PASLON 01 -->
+            <div class="panel">
+                <h2>Paslon 01</h2>
+
+                <label>Nomor</label>
+                <input id="p1No" placeholder="01" />
+
+                <label>Nama</label>
+                <input id="p1Name" placeholder="Nama Ketua • Nama Wakil" />
+
+                <label>Suara</label>
+                <div class="stepper">
+                    <button type="button" class="step minus" data-target="p1Votes">−</button>
+                    <input id="p1Votes" type="number" min="0" step="1" value="0" />
+                    <button type="button" class="step plus" data-target="p1Votes">+</button>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn" data-bump="p1Votes" data-amount="5">+5</button>
+                    <button type="button" class="btn" data-bump="p1Votes" data-amount="10">+10</button>
+                </div>
+            </div>
+
+            <!-- PASLON 02 -->
+            <div class="panel">
+                <h2>Paslon 02</h2>
+
+                <label>Nomor</label>
+                <input id="p2No" placeholder="02" />
+
+                <label>Nama</label>
+                <input id="p2Name" placeholder="Nama Ketua • Nama Wakil" />
+
+                <label>Suara</label>
+                <div class="stepper">
+                    <button type="button" class="step minus" data-target="p2Votes">−</button>
+                    <input id="p2Votes" type="number" min="0" step="1" value="0" />
+                    <button type="button" class="step plus" data-target="p2Votes">+</button>
+                </div>
+
+                <div class="row">
+                    <button type="button" class="btn" data-bump="p2Votes" data-amount="5">+5</button>
+                    <button type="button" class="btn" data-bump="p2Votes" data-amount="10">+10</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-note">
+            Tip: buka overlay di OBS Browser Source → <span class="mono">http://localhost:5500/overlay.html</span>
+        </div>
+    </div>
+
+    <script src="./control.js"></script>
+</body>
+
+</html>

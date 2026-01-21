@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Akhir Pemilihan OSIS - 26/27</title>
+    <link rel="stylesheet" href="results.css">
+</head>
+
+<body>
+    <div class="frame">
+        <div class="paper-container">
+            <!-- BACKGROUND DECO -->
+            <img class="star s1" src="./assets/star.svg" alt="" />
+            <img class="star s2" src="./assets/star.svg" alt="" />
+
+            <header>
+                <h1 id="titleText">HASIL AKHIR PEMILIHAN</h1>
+                <div class="sub-title" id="schoolText">SMK BUNDA MULIA • 2026</div>
+            </header>
+
+            <main class="stats-collage">
+                <!-- PASLON 01 -->
+                <div class="result-card p1" id="cardP1">
+                    <div class="tape tl"></div>
+                    <div class="winner-label">PEMENANG</div>
+
+                    <div class="card-top">
+                        <div class="no-box" id="p1No">01</div>
+                        <div class="c-names">
+                            <div class="name-main" id="p1Name">Nama Ketua & Wakil</div>
+                            <div class="name-sub">PASANGAN CALON 01</div>
+                        </div>
+                    </div>
+
+                    <div class="data-viz">
+                        <div class="pct-val" id="p1Pct">0%</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" id="p1Bar"></div>
+                        </div>
+                        <div class="votes-sub">Total: <span id="p1Votes">0</span> suara</div>
+                    </div>
+                </div>
+
+                <!-- PASLON 02 -->
+                <div class="result-card p2" id="cardP2">
+                    <div class="tape tr"></div>
+                    <div class="winner-label">PEMENANG</div>
+
+                    <div class="card-top">
+                        <div class="no-box" id="p2No">02</div>
+                        <div class="c-names">
+                            <div class="name-main" id="p2Name">Nama Ketua & Wakil</div>
+                            <div class="name-sub">PASANGAN CALON 02</div>
+                        </div>
+                    </div>
+
+                    <div class="data-viz">
+                        <div class="pct-val" id="p2Pct">0%</div>
+                        <div class="bar-track">
+                            <div class="bar-fill" id="p2Bar"></div>
+                        </div>
+                        <div class="votes-sub">Total: <span id="p2Votes">0</span> suara</div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="summary-bar">
+                <div class="sum-box">
+                    <span class="sum-lbl">Total Suara Masuk</span>
+                    <span class="sum-v"><span id="totalVotes">0</span> suara</span>
+                </div>
+                <div class="sum-box">
+                    <span class="sum-lbl">Partisipasi (TPS)</span>
+                    <span class="sum-v"><span id="tpsCount">0</span> Unit</span>
+                </div>
+                <div class="sum-box">
+                    <span class="sum-lbl">Status</span>
+                    <span class="sum-v marker-status" id="statusText">RESMI</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="results.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlay Pemilihan OSIS</title>
+    <link rel="stylesheet" href="./overlay.css" />
+</head>
+
+<body>
+    <div class="frame">
+        <div class="paper-container">
+            <!-- BACKGROUND LABELS -->
+            <div class="paslon-label p1">01</div>
+            <div class="paslon-label p2">02</div>
+
+            <!-- HEADER -->
+            <header class="scrap-header">
+                <h1 class="main-title" id="titleText">PEMILIHAN KETUA OSIS</h1>
+                <div class="sub-title" id="schoolText">SMK BUNDA MULIA • 2026</div>
+            </header>
+
+            <!-- MAIN COLLAGE -->
+            <main class="collage">
+                <!-- PASLON 01 -->
+                <div class="polaroid p1">
+                    <div class="tape t1"></div>
+                    <img class="clip c1" src="./assets/clip.svg" alt="" />
+
+                    <div class="photo-area">
+                        <img id="p1Photo" src="./assets/Paslon1.png" alt="Paslon 01"
+                            onerror="this.style.display='none'; document.getElementById('p1Fallback').style.display='grid';" />
+                        <div class="fallback" id="p1Fallback">FOTO</div>
+                    </div>
+
+                    <div class="caption" id="p1Name">Evan • Shinny</div>
+
+                    <!-- DATA -->
+                    <div class="data-box p1-votes">
+                        <span class="val" id="p1Votes">0 suara</span>
+                        <span class="lbl">TOTAL</span>
+                    </div>
+                    <div class="pct-stamp p1" id="p1Pct">0%</div>
+                </div>
+
+                <!-- PASLON 02 -->
+                <div class="polaroid p2">
+                    <div class="tape t2"></div>
+
+                    <div class="photo-area">
+                        <img id="p2Photo" src="./assets/Paslon2.png" alt="Paslon 02"
+                            onerror="this.style.display='none'; document.getElementById('p2Fallback').style.display='grid';" />
+                        <div class="fallback" id="p2Fallback">FOTO</div>
+                    </div>
+
+                    <div class="caption" id="p2Name">Vanya • Clara</div>
+
+                    <!-- DATA -->
+                    <div class="data-box p2-votes">
+                        <span class="lbl">TOTAL</span>
+                        <span class="val" id="p2Votes">0 suara</span>
+                    </div>
+                    <div class="pct-stamp p2" id="p2Pct">0%</div>
+                </div>
+
+                <!-- STARS DECO -->
+                <img class="star s1" src="./assets/star.svg" alt="" />
+                <img class="star s2" src="./assets/star.svg" alt="" />
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="scrap-footer">
+                <div class="foot-left">
+                    <span class="live-indicator" id="statusText">LIVE</span>
+                    <span id="tickerTime">00:00</span> • <span id="footerSource">Sumber: Panitia OSIS SMK Bunda
+                        Mulia</span>
+                </div>
+                <div class="foot-right">
+                    Suara Masuk: <span id="totalEntryPct">0%</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./overlay.js"></script>
+</body>
+
+</html>
