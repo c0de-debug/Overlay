@@ -82,10 +82,8 @@ function render() {
 // Initial render
 render();
 
-// Watch for changes in localStorage
 window.addEventListener("storage", (e) => {
     if (e.key === STORAGE_KEY) render();
 });
 
-// Periodic check (optional, but good for local dev without storage events across same-origin tabs)
 setInterval(render, 1000);

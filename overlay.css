@@ -152,7 +152,7 @@ body {
   color: #444;
 }
 
-/* PASLON LABELS (BIG STAMPED NUMBERS) */
+/* PASLON LABELS */
 .paslon-label {
   position: absolute;
   font-weight: 900;
@@ -176,7 +176,7 @@ body {
   -webkit-text-stroke: 4px var(--p2);
 }
 
-/* DATA BOXES (NEWS ELEMENTS 10%) */
+/* DATA BOXES*/
 .data-box {
   position: absolute;
   background: #fff;

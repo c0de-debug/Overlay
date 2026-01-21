@@ -7,9 +7,7 @@
     --text: #1f2937;
     --p1: #1e40af;
     --p2: #065f46;
-    /* Using same green from overlay.css */
     --win-color: #f59e0b;
-    /* Amber for winner */
 }
 
 * {
