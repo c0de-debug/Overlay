@@ -79,7 +79,7 @@ body {
 
 .p1 .votes {
   position: absolute;
-  top: 400px;
+  top: 400px; 
   left: 50px;
   border-left: 5px solid var(--p1);
 }
@@ -102,9 +102,10 @@ body {
 
 .p2 .votes {
   position: absolute;
-  bottom: 236px;
-  right: 80px;
+  top: 410px;
+  right: 725px;
   border-right: 5px solid var(--p2);
+  transform: rotate(-25deg);
 }
 
 .p2 .pct {

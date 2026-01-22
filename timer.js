@@ -1,10 +1,14 @@
 const STORAGE_KEY = "osis_state";
 const syncChannel = new BroadcastChannel("osis_sync");
 
+// 1. Initialize the audio object (replace with your file path)
+const alarmSound = new Audio("assets/Ring.mp3");
+
 const DEFAULTS = {
   timerRemaining: 0,
   timerTarget: 0,
   timerRunning: false,
+  alarmPlayed: false,
 };
 
 function loadState() {
@@ -18,6 +22,10 @@ function loadState() {
   }
 }
 
+function saveState(newState) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(newState));
+}
+
 function render() {
   const s = loadState();
   let remaining = s.timerRemaining || 0;
@@ -25,6 +33,12 @@ function render() {
   if (s.timerRunning) {
     const diff = Math.ceil((s.timerTarget - Date.now()) / 1000);
     remaining = Math.max(0, diff);
+
+    if (remaining === 0 && !s.alarmPlayed) {
+      alarmSound.play().catch(err => console.log("Audio play blocked:", err));
+      
+      saveState({ ...s, timerRunning: false, alarmPlayed: true });
+    }
   }
 
   const m = Math.floor(remaining / 60);
@@ -37,24 +51,14 @@ function render() {
   }
 }
 
-// Update frequently for smooth countdown
 setInterval(render, 100);
 
-// Listen for changes from other tabs
 window.addEventListener("storage", (e) => {
-  if (e.key === STORAGE_KEY) {
-    render();
-  }
+  if (e.key === STORAGE_KEY) render();
 });
 
 syncChannel.onmessage = (e) => {
-  if (e.data.type === "SYNC") {
-    render();
-  }
+  if (e.data.type === "SYNC") render();
 };
 
-// Initial render
 render();
-
-// Debugging for OBS
-console.log("Timer loaded on origin:", window.location.origin);
