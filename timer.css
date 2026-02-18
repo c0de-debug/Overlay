@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Permanent+Marker&family=Playfair+Display:wght@700;900&display=swap');
 
 html,
 body {
@@ -14,7 +14,7 @@ body {
 .timer-frame {
     width: 1920px;
     height: 1080px;
-    background-image: url("./assets/Timer Pilketos 26'.png");
+    background-image: url("./assets/Timer V&I.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -25,7 +25,7 @@ body {
 
 .timer-container {
     text-align: center;
-    color: #333;
+    color: #c70000;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,20 +34,21 @@ body {
 }
 
 #timerValue {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Playfair Display', serif;
     font-size: 320px;
     font-weight: 900;
     line-height: 0.8;
-    letter-spacing: 15px;
+    letter-spacing: 5px;
     font-variant-numeric: tabular-nums;
 }
 
 .timer-label {
+    font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 10px;
     margin-top: 50px;
     opacity: 0.8;
     text-transform: uppercase;
-    color: #555;
+    color: #000000;
 }

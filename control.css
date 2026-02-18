@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
 :root {
-  --bg: #e2e8f0;
+  --bg: #f8fafc;
   --panel: #ffffff;
   --stroke: rgba(0, 0, 0, 0.05);
-  --text: #1f2937;
-  --muted: #6b7280;
-  --accent: #1e40af;
-  /* Scrapbook blue */
-  --p1: #1e40af;
-  --p2: #065f46;
+  --text: #014a94;
+  --muted: #64748b;
+  --accent: #fdb913;
+  /* SBM theme colors */
+  --sbm-blue: #014a94;
+  --sbm-yellow: #fdb913;
   --danger: #ef4444;
 }
 
@@ -43,7 +43,7 @@ h1 {
   margin: 0;
   font-size: 32px;
   font-weight: 900;
-  color: var(--accent);
+  color: var(--sbm-blue);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -78,18 +78,18 @@ h1 {
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 2px solid var(--bg);
+  border-bottom: 2px solid var(--sbm-yellow);
   padding-bottom: 12px;
 }
 
 .panel:nth-child(3) h2 {
-  color: var(--p1);
-  border-bottom-color: rgba(189, 30, 45, 0.1);
+  color: var(--sbm-blue);
+  border-bottom-color: var(--sbm-yellow);
 }
 
 .panel:nth-child(4) h2 {
-  color: var(--p2);
-  border-bottom-color: rgba(224, 157, 29, 0.1);
+  color: var(--sbm-blue);
+  border-bottom-color: var(--sbm-yellow);
 }
 
 label {
@@ -146,14 +146,14 @@ select:focus {
 }
 
 .btn.primary {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--sbm-blue);
+  border-color: var(--sbm-blue);
   color: #fff;
 }
 
 .btn.primary:hover {
-  background: #d63d1f;
-  border-color: #d63d1f;
+  background: #013a75;
+  border-color: #013a75;
 }
 
 .btn.danger {
